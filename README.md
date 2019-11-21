@@ -1,3 +1,3 @@
-# bga_responsive_tables
+Business.gov.au - responsive tables
 
-[BGA Responsive tables](https://ausgov.github.io/bga_responsive_tables/table-reveal.html)
+[Prototype](https://ausgov.github.io/bga_responsive_tables/table-reveal.html)
