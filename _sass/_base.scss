@@ -1,0 +1,319 @@
+/*  GLOBAL STYLES  */
+
+h1, h2 {
+    font-weight: 600;
+}
+.generic-table table {
+    margin-bottom: 80px;
+}
+nav {
+
+    ul {
+        padding: 15px 0;
+        margin: 0;
+    }
+    li {
+        text-indent: 0;
+        //margin-rght: 5px;
+        list-style-type: none;
+        padding: 0;
+    }
+    a {
+        color: $white; 
+        text-decoration: none;
+        font-weight: 600;
+        
+        &:hover {
+            color: $white;
+        }
+    }
+}
+#main-content.home {
+    .body-copy {
+        padding: 60px 0 30px;
+    }
+}
+
+
+/*  TABLES  */
+
+// ---------- Tables Scroll ---------- //
+.table-scroll {
+    
+@media only screen and (max-width: 1000px) {
+
+    
+    .generic-table {
+        width: auto;
+        overflow-x: scroll;
+        margin-left: 5em;
+        overflow-y: visible;
+        padding: 0;
+        
+        table {
+            display: block; 
+            position: relative; 
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+        }
+        
+        td, th { 
+            margin: 0;
+            white-space: nowrap;
+            border-top-width: 0px; 
+        }
+        .headcol {
+            position: absolute;
+            width: 5em;
+            left: 0;
+            top: auto;
+            background: pink;
+        }
+
+    }
+	
+    
+} //end @media
+    
+    
+}
+
+
+// ---------- Tables Stacked ---------- //
+.table-stacked {
+    
+    .table-responsive {
+        overflow-y: hidden;
+    }
+    
+    
+    @media only screen and (max-width: 1200px) {
+
+    table, thead, tbody, th, td, tr { 
+        display: block !important;
+    }
+        
+    .generic-table {
+        margin-bottom: 30px;
+        
+        table {
+            background: linear-gradient(90deg, $grey-lighter 40%, $white 40%);
+        }
+        
+
+        /* Hide table headers (but not display: none; for accessibility) */
+        thead tr { 
+            position: absolute;
+            top: -9999px;
+            left: -9999px;
+        }
+        td { 
+            position: relative;
+            padding-left: 35%; 
+            white-space: normal;
+            text-align:left;
+            border-top: 0px;
+            background: $white;
+            background: linear-gradient(90deg, $grey-lighter 30%, $white 30%);
+
+            &::before { 
+                position: absolute;
+                top: 16px;
+                left: 16px;
+                width: 25%; 
+                width: 25%; 
+                text-align:left;
+                content: attr(data-title); 
+                font-weight: 600;
+               
+            }
+        }
+        tr {
+            border-bottom: 1px solid $grey;
+            
+            &:first-of-type {
+                    font-weight: 600;
+                }
+            &:last-of-type {
+                }
+            td {
+                &:first-of-type {
+                    font-weight: 600 !important;
+                }
+            }
+        }
+
+    }
+
+	
+    
+} //end @media 1200px
+    
+@media (max-width:650px) {
+    
+        .generic-table {
+        
+            td {
+                padding-left: 45%;
+                font-size: 14px;
+                line-height: 1.4rem;
+                background: linear-gradient(90deg, $grey-lighter 40%, $white 40%);
+                
+                &::before {
+                    width: 30%;
+                    padding-bottom: 20px;
+                }
+            }
+        
+        }
+} 
+
+@media (max-width:450px) {
+    
+        .generic-table {
+            td {
+                padding-left: 50%;
+                font-size: 14px;
+                line-height: 1.4rem;
+                background: linear-gradient(90deg, $grey-lighter 45%, $white 45%);
+                
+                &::before {
+                    width: 35%;
+                }
+                &:last-of-type {
+                    padding-bottom: 30px;
+                }
+            }
+        
+        }
+
+
+} // end @media 450px
+    
+    
+} // end table-stacked
+
+
+
+// ---------- Tables Reveal ---------- //
+.table-reveal {
+       
+    .table-responsive {
+        overflow-y: hidden;
+    }
+    
+    @media (max-width: 1200px) {
+
+    .generic-table {
+        margin-bottom: 80px;
+        
+        table, thead, tbody, th, td, tr { 
+            display: block; 
+        }
+        /* Hide table headers (but not display: none;, for accessibility) */
+        thead tr { 
+            position: absolute;
+            top: -9999px;
+            left: -9999px;
+        }
+        td { 
+            display: none;
+            position: relative;
+            padding-left: 30%; 
+            white-space: normal;
+            text-align:left;
+            border-top: 0px;
+       
+            &::before { 
+                position: absolute;
+                top: 16px;
+                left: 16px;
+                width: 25%; 
+                text-align:left;
+                content: attr(data-title); 
+                display: block;
+            }
+        }
+        tr {
+            display: table;
+            width: 100%;
+            border-bottom: solid 1px $grey-light;
+            
+            td {
+                background: $grey-lighter;
+                &:first-of-type {
+                    background: $white url(../assets/Icon-chevron-down.svg) no-repeat;
+                    background-position: right 16px center;
+                    background-size: 16px 10px;
+                    font-weight: 600;
+                    padding-left: 16px;
+                    padding-right: 50px;
+                    display: block;
+                    
+                    &::before {
+                        content: "";
+                    }
+                }
+            }
+        }
+        .showGroup {
+            display: block;
+            transition: all .2s;
+        }
+        .groupParent td {
+            &:first-of-type {
+                background: $grey-lighter url(../assets/Icon-chevron-up.svg) no-repeat;
+                background-position: right 16px center;
+                background-size: 16px 10px;
+            }
+        }
+    
+
+    }
+
+
+	
+    
+} //end @media 1200 px
+    
+    @media (max-width:650px) {
+    
+        .generic-table {
+            td {
+                padding-left: 45%;
+                font-size: 14px;
+                line-height: 1.4rem;
+                
+                &::before {
+                    width: 30%;
+                }
+                &:last-of-type {
+                    padding-bottom: 10px;
+                }
+            }
+        
+        }
+
+}// end @media 650px 
+    
+    @media (max-width:450px) {
+    
+        .generic-table {
+            td {
+                padding-left: 50%;
+                
+                &::before {
+                    width: 35%;
+                }
+                &:last-of-type {
+                    padding-bottom: 30px;
+                }
+            }
+        
+        }
+
+}// end @media 650px 
+    
+
+}// END .table-reveal
